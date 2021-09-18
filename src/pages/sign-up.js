@@ -2,11 +2,11 @@
 // eslint-disable-next-line prettier/prettier
 import { Wrap, Box, Text, Heading, Image } from '@chakra-ui/react';
 import { Link } from 'react-router-dom';
-import LoginForm from '../components/login/LoginForm';
+import SignupForm from '../components/sign-up/signupForm';
 import Carousel from '../components/login/carousel';
 import * as ROUTES from '../constants/routes';
 
-export default function Login() {
+export default function SignUp() {
   return (
     <Wrap justify="center" align="center" pt="4vh" spacing="50px">
       <Box
@@ -14,10 +14,10 @@ export default function Login() {
         w="33vw"
         minW="564px"
         h="90vh"
-        minH="597px"
         maxH="940px"
+        minH="805px"
       >
-        <Box maxW="md" mx="auto" height="100%" align="center" pt={59}>
+        <Box maxW="md" mx="auto" height="100%" align="center" pt={50}>
           <Image
             htmlHeight="50%"
             htmlWidth="50%"
@@ -25,17 +25,17 @@ export default function Login() {
             src="/images/logoFull.png"
             alt="Udhaar"
           />
-          <Heading textAlign="center" size="xl" fontWeight="extrabold" mt={-4}>
-            Sign in to your account
+          <Heading textAlign="center" size="xl" fontWeight="extrabold" mt={-6}>
+            Create an account
           </Heading>
-          <Text mt="2" mb="14" align="center" maxW="md" fontWeight="medium">
-            <Text as="span">Don&apos;t have an account?</Text>
-            <Link to={ROUTES.SIGN_UP} style={{ color: '#de9e48' }}>
+          <Text mt="2" mb="8" align="center" maxW="md" fontWeight="medium">
+            <Text as="span">Already have an account?</Text>
+            <Link to={ROUTES.LOGIN} style={{ color: '#de9e48' }}>
               {' '}
-              Sign up
+              Login
             </Link>
           </Text>
-          <LoginForm />
+          <SignupForm />
         </Box>
       </Box>
       <Carousel />

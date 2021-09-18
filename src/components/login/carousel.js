@@ -12,7 +12,7 @@ export default function Carousel() {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 3000,
     pauseOnHover: true
   };
 
@@ -20,9 +20,10 @@ export default function Carousel() {
     <Box
       boxShadow="base"
       w="33vw"
-      minW="600px"
-      h="80vh"
+      minW="564px"
+      h="90vh"
       maxH="940px"
+      minH="630px"
       align="center"
     >
       <Slider {...settings}>
@@ -38,13 +39,13 @@ export default function Carousel() {
             alt="Connect with Customers"
             pl="10%"
           />
-          <Heading as="h4" size="md" pl={10}>
+          <Heading as="h4" size="md" p={8} pl={14}>
             Connect with Customers
           </Heading>
         </VStack>
         <VStack spacing={4} pt="10%">
           <Image src="/images/safesecure.svg" alt="Safe and Secure" />
-          <Heading as="h4" size="md" pl={10}>
+          <Heading as="h4" size="md" p={8} pl={14}>
             100% Safe and Secure
           </Heading>
         </VStack>

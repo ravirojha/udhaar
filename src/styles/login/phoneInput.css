@@ -1,3 +1,7 @@
+.PhoneInput {
+  margin-left: 2px;
+  margin-top: -2px;
+}
 .PhoneInputInput {
   height: 2.5rem !important;
   border: 1px solid #e2e8f0 !important;
