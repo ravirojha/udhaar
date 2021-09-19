@@ -28,56 +28,69 @@ export default function SignupForm(props) {
       {...props}
     >
       <Stack spacing="2" mt={-4}>
-        <FormControl id="name">
-          <FormLabel>Name</FormLabel>
-          <Input
-            name="name"
-            type="text"
-            mt={-2}
-            autoComplete="name"
-            placeholder="Enter your name"
-            required
-          />
-        </FormControl>
-        <FormControl id="mobile">
-          <FormLabel>Mobile number</FormLabel>
-          <PhoneInput
-            defaultCountry="IN"
-            placeholder="Enter phone number"
-            value={number}
-            onChange={setNumber}
-          />
-        </FormControl>
-        <FormControl id="email">
-          <FormLabel>Email address (optional)</FormLabel>
-          <Input
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="Enter your email address"
-            mt={-2}
-            required
-          />
-        </FormControl>
         <RadioGroup onChange={setUserType} value={userType}>
           <Stack direction="row">
             <Radio value="customer">Customer</Radio>
             <Radio value="merchant">Merchant</Radio>
           </Stack>
         </RadioGroup>
+        <FormControl id="name" isRequired>
+          {userType === 'merchant' ? (
+            <FormLabel>Shop's name</FormLabel>
+          ) : (
+            <FormLabel>Customer's name</FormLabel>
+          )}
+          <Input
+            name="name"
+            type="text"
+            mt={-2}
+            focusBorderColor="#de9e48"
+            errorBorderColor="red.500"
+            autoComplete="name"
+            placeholder={
+              userType === 'merchant'
+                ? `Enter Shop's name`
+                : `Enter Customer's name`
+            }
+            required
+          />
+        </FormControl>
         {userType === 'merchant' && (
           <FormControl id="ownerName">
-            <FormLabel>Shop Name</FormLabel>
+            <FormLabel>Owner's Name</FormLabel>
             <Input
-              name="shopName"
+              name="ownerName"
               type="text"
+              focusBorderColor="#de9e48"
+              errorBorderColor="red.500"
               mt={-2}
-              placeholder="Enter Shop's name"
-              autoComplete="shopName"
-              required
+              placeholder="Enter Owner's name"
+              autoComplete="ownerName"
             />
           </FormControl>
         )}
+        <FormControl id="mobile" isRequired>
+          <FormLabel>Mobile number</FormLabel>
+          <PhoneInput
+            defaultCountry="IN"
+            placeholder="Enter phone number"
+            value={number}
+            onChange={setNumber}
+            required
+          />
+        </FormControl>
+        <FormControl id="email">
+          <FormLabel>Email address</FormLabel>
+          <Input
+            name="email"
+            type="email"
+            focusBorderColor="#de9e48"
+            errorBorderColor="red.500"
+            autoComplete="email"
+            placeholder="Enter your email address"
+            mt={-2}
+          />
+        </FormControl>
         <PasswordField />
         <Button
           type="submit"

@@ -57,6 +57,8 @@ export const PasswordField = React.forwardRef((props, ref) => {
           ref={mergeRef}
           name="password"
           type={isOpen ? 'text' : 'password'}
+          focusBorderColor="#de9e48"
+          errorBorderColor="red.500"
           autoComplete="current-password"
           placeholder="Enter password"
           required

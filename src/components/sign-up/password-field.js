@@ -36,7 +36,7 @@ export const PasswordField = React.forwardRef((props, ref) => {
   };
 
   return (
-    <FormControl id="password">
+    <FormControl id="password" isRequired>
       <Stack spacing={2}>
         <Stack spacing={-2}>
           <Flex justify="space-between">
@@ -56,6 +56,8 @@ export const PasswordField = React.forwardRef((props, ref) => {
               ref={mergeRef}
               name="password"
               type={isOpen ? 'text' : 'password'}
+              focusBorderColor="#de9e48"
+              errorBorderColor="red.500"
               autoComplete="current-password"
               placeholder="Enter password"
               required
@@ -81,8 +83,10 @@ export const PasswordField = React.forwardRef((props, ref) => {
               ref={mergeRef}
               name="password"
               type={isOpen ? 'text' : 'password'}
+              focusBorderColor="#de9e48"
+              errorBorderColor="red.500"
               autoComplete="current-password"
-              placeholder="Enter password"
+              placeholder="Confirm password"
               required
               {...props}
             />

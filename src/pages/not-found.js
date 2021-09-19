@@ -1,3 +1,3 @@
 export default function NotFound() {
-  return <p>404: Page Not Found</p>;
+  return <p>Oops! You have stepped into the unchartered waters</p>;
 }
